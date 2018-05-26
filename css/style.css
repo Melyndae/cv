@@ -1,0 +1,576 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+html, body {
+  height: 100%;
+  font-family: 'Open Sans', sans-serif;
+} 
+
+p span{
+  color:red;
+}
+
+/*menu*/
+.hbg-menu {
+  position: fixed; /*Toujours en haut*/
+  top: 12px;
+  left: 12px;         /*Position de l'icon menu*/
+  width: 60px;
+  height: 50px;
+  transition: all 300ms 0s ease;    /*ouverture menu*/
+  z-index: 1; /*important*/
+  cursor: pointer; /*Main de la souris*/
+  background: #FF5F6D; 
+  background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+  
+.hbg-menu-open {
+  top: -300px;
+  left: -300px;
+  width: 600px;           /*dimensions du menu quand il est ouvert*/
+  height: 700px;
+  border-radius: 300px;
+}
+  
+.hbg-menu-contents {
+  display: none;
+  position: fixed;          /*contenu du menu fermé*/
+  top: 0;
+  left: 0;
+}
+  
+.hbg-menu-contents-open {
+  display: inherit;
+  position: fixed;
+  top: 60px;
+  left: 15px;                 /*contenu du menu ouvert*/
+  width: 300px;
+  height: 200px;
+  z-index: 2;
+}
+  
+.hbg-menu-contents-close {
+  color: #fff;
+  font-size: 50px;          /*Personnalisation du contenu (icon) menu fermé*/
+  margin-left: 25px;
+}
+  
+.hbg-menu-contents-menu1 {
+  color: #fff;
+  margin-left: 70px;      /*Barre du haut de l'icon menu fermé*/
+  cursor: pointer;
+}
+  
+.hbg-menu-contents-menu2 {
+  color: #fff;
+  margin-left: 40px;      /*Barre du milieu de l'icon menu fermé*/
+  cursor: pointer;
+}
+  
+.hbg-menu-contents-menu3 {
+  color: #fff;
+  margin-left: 10px;        /*Barre du bas de l'icon menu fermé*/
+  cursor: pointer;
+}
+
+.hbg, .hbg span {
+  display: inline-block;
+  box-sizing: border-box;     /*Positionnement des barres de l'icon menu fermé*/
+}
+  
+.hbg {
+  margin: 10px;
+  position: relative;
+  width: 40px;                /*Icon menu fermé*/
+  height: 30px;
+}
+
+.hbg span {
+  position: absolute;
+  left: 0;
+  width: 40px;                  /*Apparition de l'icon menu fermé*/
+  height: 3px;
+  background-color: #fff;
+}
+
+.hbg .hbg-1 {
+  top: 0;/*trait du haut*/
+}
+
+.hbg .hbg-2 {
+  top: 13px;/*trait du milieu*/
+}
+
+.hbg .hbg-3 {
+  bottom: 0; /*trait du bas*/
+}
+  
+.hbg.active {
+  animation: fadeIn 1s ease 0s 1 normal;
+  position: fixed;
+  top: 12px;                                    /*Icon menu ouvert*/
+  left: 12px;
+}
+
+.hbg.active .hbg-1 {
+  -webkit-transform: translateY(13px) rotate(-45deg);
+  transform: translateY(13px) rotate(-45deg);                   /*Icon menu ouvert trait du haut pour faire la croix*/
+}
+
+.hbg.active .hbg-2 {
+  opacity: 0;                   /*Trait du milieu icon menu fermé qui disparait*/
+}
+
+.hbg.active .hbg-3 {
+  -webkit-transform: translateY(-14px) rotate(45deg);
+  transform: translateY(-14px) rotate(45deg);                 /*Icon menu ouvert trait du bas pour faire la croix*/
+}
+/*fin du menu*/
+
+.responsive{
+  height: auto;
+  width: 300px;                 /*Photo ordi telephone*/
+}
+
+.melinda{
+  border-radius: 50%;
+  height: auto;                   /*Photo de moi*/
+  width: 150px; 
+  box-shadow: 10px 5px 5px rgb(160, 148, 148);
+}
+
+/*badges*/
+.amg-skills {
+  width: 100%;
+}
+
+.amg-badge {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 20px 5%;            /*Contenu de la rubrique compétences*/
+  width:100%;
+  text-align: center;
+}
+
+.amg-badge img{
+  padding: 15px;
+  width: auto;
+  height: 170px;
+  transition: transform 0.4s; /*effets de zoom*/
+}
+
+.amg-badge img:hover{
+  transform: scale(1.1)
+}
+
+@media only screen and (max-width : 760px) {
+  .amg-badge {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 100%;                /*Responsive*/
+  }
+  .amg-badge img{
+    height: 90px;
+    margin: 0;
+    transform: translateX(-10px);
+  }
+}
+@media only screen and (max-width : 480px) {
+
+  .amg-badge {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;                /*Responsive*/
+  }
+  .amg-badge img{
+    height: 90px;
+    margin: 0;
+    transform: translateX(-10px);
+  }
+}
+/*fin badges*/
+
+hr {
+  border: 0;
+  width: 50px;                      /*Trait pour souligné les titres */
+  height: 2px;
+  background-color: #DD4E40;
+}
+
+.jumbotron hr {
+  width: 30%;
+  min-width: 185px;               /* Trait pour souligné le titre du header*/
+  max-width: 300px;
+  margin-top: -10px;
+}
+
+h1 {
+  text-shadow: 1px 2px 3px #000;
+  color: black;
+  margin-top: 15%;                          /*Gros titre du header*/
+  font-family: 'Great Vibes', cursive;
+  font-size:100px;
+}
+
+.jumbotron p {
+  font-size: 22px;
+  text-shadow: 2px 2px 2px #DD4E40;                  /*Sous titre du header*/
+  font-family: 'Lato', sans-serif;
+}
+
+#contact {
+  padding: 40px;
+}
+
+#contact a {
+  color: #D76D77;                 /*Couleur des liens de la rubrique contact*/
+}
+
+.container-fluid{
+  text-align: center;
+  padding: 20px;                  /*Contenu*/
+  width: 100%;
+}
+
+#footer {
+  background-image:url("../image/fond.jpg");
+  background-size: cover;
+  -webkit-box-shadow: inset 0px 10px 20px -9px rgba(0, 0, 0, 0.75);             /*Footer*/
+  -moz-box-shadow: inset 0px 10px 20px -9px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0px 10px 20px -9px rgba(0, 0, 0, 0.75);
+  color: #FFFFFF;
+}
+
+#footer a {
+  color: #FFFFFF;         /*Lien du footer*/
+  font-size: 15px;
+}
+
+.copyright {
+  padding-top: 10px;
+  font-size: 15px;        /*Texte du copyright / footer */
+  color: #FFFFFF;
+}
+
+.fa {
+  font-size: 60px;
+  margin-left: 15px;                  /*Icons reseaux sociaux*/
+  transition: all 1s ease 0s;
+}
+
+.fa-viadeo:hover {
+  color: rgb(221, 100, 44);         /*Icon viadeo*/
+}
+
+.fa-linkedin-square:hover {
+  color: rgb(23, 164, 230);         /*Icon linkedin*/
+}
+
+.fa-github:hover {
+  color: rgb(0, 0, 0);               /*Icon github*/
+}
+
+.fa-envelope-o:hover {
+  color: #DD4E40;                 /*Icon enveloppe / mail */
+}
+
+.jumbotron {
+  background: linear-gradient(130deg, #ac75b4 0%,#da8383 25%,#f3cf9d 50%,#dbebd6 75%,#76a4d4 100%); 
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;                         /*Personnalisation du header*/
+  opacity: 1;
+  height: 100%;
+  min-height: 600px;
+  color: #ffffff;
+}
+
+#particles-js{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;                /*Header*/
+  height: 100%;
+}
+
+h2{
+  font-family: 'Pacifico', cursive;           /*Titre*/
+  text-align: center;
+}
+
+h3{
+  font-family: 'Pacifico', cursive;           /*Titre*/
+}
+
+.overlay h2 {
+  font-family: 'Open Sans', sans-serif;       /*Police du titre sur les images réalisations*/
+}
+
+p {
+  font-size: 18px;            /*Taille police des p*/
+}
+
+.coordonnees{
+  line-height: 0.5;
+}
+
+a {
+  color:#000000;          /*Liens*/
+  /*font-weight: bold;*/
+}
+
+a:hover, a:active a:visited {
+  color: #5c5c5c88;                   /*Liens quand on passe la souris dessus*/
+  text-decoration: none;
+}
+
+/*Fond jaune vert*/
+.bg-green {
+  background: #f8d849;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #42f374, #f8d849);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #42f374, #f8d849); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+/*fond bleu*/
+.bg-blue{
+  background: #74ebd5;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  transform: skew(0deg, -4.5deg); /*Pour mettre la rubrique de biais*/
+}
+
+#skills{
+  text-align: center;
+  padding: 40px;                                /*Rubrique badges */
+  margin-bottom: 30px;
+  transform: skew(0deg, 4.5deg); /*mettre le texte droit dans la div de biais*/
+}
+
+#realisations{
+  padding:30px;                       /*Rubrique réalisations*/
+}
+
+  /*Fond blanc*/
+  .bg-white {
+    background-color: #ffffff;
+}
+
+img{
+  width: 80px;
+  height: 80px;
+  display: inline-block;        /*Taille des images*/
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.col-xs-12 {
+  padding: 3px;       /*Rubrique a propos, badges, réalisations*/
+}
+
+.col-md-3 {
+  padding: 10px;
+  display: flex;
+  justify-content: center;        /*rubrique réalisations*/
+  align-items: center;
+}
+
+.realisationsImg {
+  height: 230px;
+  background-size: cover;
+  background-position: center;
+  width: 100%;                      /*images réalisations*/
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hover sur les images de la rubrique réalisations */
+.hovereffect {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  cursor: default;
+  background-color: #242B35;
+}
+
+.hovereffect .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  padding: 25px 20px;
+  cursor: pointer;
+}
+
+.hovereffect img {
+  display: block;
+  position: relative;
+  max-width: none;
+  width: calc(100% + 20px);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(-10px, 0, 0);
+  transform: translate3d(-10px, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.hovereffect:hover img {
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.hovereffect h2 {
+  text-transform: uppercase;
+  opacity: 0;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  font-size: 17px;
+  overflow: hidden;
+  padding: 0.5em 0;
+  background-color: transparent;
+}
+
+.hovereffect h2:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  content: '';
+  -webkit-transition: -webkit-transform 0.35s;
+  transition: transform 0.35s;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+}
+
+.hovereffect:hover h2:after {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.hovereffect a, .hovereffect p {
+  color: #FFF;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+
+.hovereffect:hover a, .hovereffect:hover p, .hovereffect:hover h2 {
+  opacity: 1;
+  filter: alpha(opacity=100);
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+  /*frise formations / école*/
+#timeline {
+  padding-top: 5%;
+}
+.timeline {
+  height: 100%;
+  position: relative;
+}
+
+.timeline canvas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+.timeline figcaption {
+  font: 900 190% 'Lato';
+  text-transform: uppercase;
+  -webkit-text-stroke: .25px;
+}
+
+.timeline h2 {
+  padding-bottom: 70px;
+}
+
+.timeline h6 {
+  color: #3A1C71      /*couleur des titres*/
+}
+
+.timeline p,
+.timeline ol {
+  font: 400 95%;
+  padding: 3px 0 20px 0;        /*texte dans la frise*/
+  color: #575757;
+  text-align: justify;
+  width: 70%;
+}
+
+.timeline ol {
+  list-style: disc;
+  margin-top: -20px;
+  padding-left: 40px;
+}
+
+.timeline figure {
+  float: right;
+  width: 100%;
+}
+
+.timeline article {
+  position: relative;
+  width: 38%;
+  overflow: hidden;
+  margin-bottom: 100px;
+}
+
+.timeline article:first-of-type {
+  float: left;
+  text-align: right;
+}
+
+.timeline article:first-of-type p,
+.timeline article:first-of-type figure {
+  float: right;
+}
+
+.timeline article:last-of-type {
+  float: right;
+  text-align:left;
+}
+
+.timeline article:last-of-type h6,
+.timeline article:last-of-type a {
+  color: #FFAF7B;
+}
+
+.timeline article:last-of-type a:hover {
+  color: #FFAF7B;
+}
+  /*fin de frise*/
+
+  /* média queries*/
+@media screen and (max-width: 640px) {
+  .timeline figcaption {
+    font: 900 1em 'Lato';
+    text-transform: uppercase;
+    -webkit-text-stroke: .25px;             /*Responsive*/
+  }
+
+  h2 {
+    font-size: 19px;
+  }
+}
