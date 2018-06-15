@@ -23,8 +23,8 @@ p span{
   z-index: 1; /*important*/
   cursor: pointer; /*Main de la souris*/
   background: #FF5F6D; 
-  background: -webkit-linear-gradient(to right, #FFC371, #FF5F6D);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #FFC371, #FF5F6D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to right, #FFC371, rgb(252, 157, 164));  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FFC371, rgb(248, 165, 172)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
   
 .hbg-menu-open {
@@ -142,6 +142,10 @@ p span{
   box-shadow: 10px 5px 5px rgb(160, 148, 148);
 }
 
+#about {
+  margin-bottom: 90px;
+}
+
 /*badges*/
 .amg-skills {
   width: 100%;
@@ -159,7 +163,7 @@ p span{
   padding: 15px;
   width: auto;
   height: 170px;
-  transition: transform 0.4s; /*effets de zoom*/
+  transition: transform 0.5s; /*effets de zoom*/
 }
 
 .amg-badge img:hover{
@@ -328,19 +332,14 @@ a:hover, a:active a:visited {
   text-decoration: none;
 }
 
-/*Fond jaune vert*/
-.bg-green {
-  background: #f8d849;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #42f374, #f8d849);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #42f374, #f8d849); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
 /*fond bleu*/
 .bg-blue{
-  background: #74ebd5;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(130deg, #da8383 0%, #da8383 25%,#e5b6b6 50%,#f3cf9d 75%,#f3cf9d 100%);
   transform: skew(0deg, -4.5deg); /*Pour mettre la rubrique de biais*/
+}
+
+.bg-blue2{
+  background: linear-gradient( #fff, #d87676, #e7c0c0, #fff);
 }
 
 #skills{
@@ -357,6 +356,7 @@ a:hover, a:active a:visited {
   /*Fond blanc*/
   .bg-white {
     background-color: #ffffff;
+    z-index: 1;
 }
 
 img{
