@@ -9,7 +9,7 @@ html, body {
 } 
 
 p span{
-  color:red;
+  color:#DD4E40;
 }
 
 /*menu*/
@@ -320,8 +320,9 @@ p {
 
 .coordonnees{
   line-height: 0.5;
+  text-align: left;
+  margin-left: 250px;
 }
-
 a {
   color:#000000;          /*Liens*/
   /*font-weight: bold;*/
