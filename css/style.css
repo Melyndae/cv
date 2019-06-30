@@ -265,7 +265,7 @@ h1 {
   transition: all 1s ease 0s;
 }
 
-.fa-viadeo:hover {
+.fa-gitlab:hover {
   color: rgb(221, 100, 44);         /*Icon viadeo*/
 }
 
