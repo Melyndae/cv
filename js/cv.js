@@ -51,7 +51,7 @@ function Timeline(cvs) {
       density: 8,
       radius: 600
     };
-    self.targets = [[30, 45, 55, 68], [35, 80, 90]]; // Changer la position des points
+    self.targets = [[30, 45, 55, 68], [30, 45, 90]]; // Changer la position des points
     self.dotColors = [
       ["#3A1C71", "rgba(58, 28, 113, 0.3)", "rgba(58, 28, 113, 0.08)"], //couleur des points, du contour et des lignes
       ["#FFAF7B", "rgba(255, 175, 123, 0.3)", "rgba(255, 175, 123, 0.12)"]
